@@ -14,12 +14,12 @@ import pkg123210034_responsi.View.Menu;
 public class menuController {
     menuModel model;
     Menu view;
-    String username;
 
     public menuController(menuModel model, Menu view) {
        this.model = model;
         this.view = view;
-        model.username = username;
+        String user = model.username;
+        view.labelWelcome.setText("Selamat Datang " + user);
     }
     
 }

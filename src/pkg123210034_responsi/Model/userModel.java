@@ -47,7 +47,13 @@ public class userModel {
                 menuController controller = new menuController(model,view);
                 view.setVisible(true);
             }
+            else if (username.isEmpty() || password.isEmpty()) {
+                Menu view = new Menu();
+             JOptionPane.showMessageDialog(view, "Username atau Password anda kosong");
+            }
             else{
+                 Menu view = new Menu();
+             JOptionPane.showMessageDialog(view, "Username atau Password anda salah");
              statement.close();
             }
         } catch (Exception e) {

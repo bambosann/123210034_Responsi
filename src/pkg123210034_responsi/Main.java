@@ -8,7 +8,6 @@ package pkg123210034_responsi;
 import pkg123210034_responsi.Controller.loginController;
 import pkg123210034_responsi.Model.userModel;
 import pkg123210034_responsi.View.LoginPageView;
-import pkg123210034_responsi.View.Menu;
 
 /**
  *

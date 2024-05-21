@@ -40,10 +40,10 @@ public class hewanModel {
         System.out.println("Error :" + e.getMessage());
         return 0;
     }} 
-    public void addHewan(String nama, String kelas, String jenis, String id) throws Exception{
+    public void addHewan(String nama, String kelas, String jenis) throws Exception{
     try{
         String query = "INSERT `hewan`(`id`,`nama`,`kelas`,`jenis_makanan`)" +
-                "VALUES ('" + id+ "','" + nama +"','" +kelas+"','" +jenis+ "')";
+                "VALUES (NULL" + ",'" + nama +"','" +kelas+"','" +jenis+ "')";
         statement = connection.createStatement();
         statement.executeUpdate(query);
         
@@ -85,13 +85,13 @@ public class hewanModel {
         }
     }
 
-    public void updateHewan(String nama, String kelas, String jenis, String id) {
+    public void updateHewan(String id, String nama, String kelas, String jenis) {
          try{
         String query = "UPDATE `hewan`" + "SET" +
-                "`nama`=" + nama + "," +
-                "`kelas`=" + kelas + "," +
-                "`jenis_makanan`=" + jenis +
-                "WHERE `id` = " + id + "";
+                "`nama`='" + nama + "'," +
+                "`kelas`='" + kelas + "'," +
+                "`jenis_makanan`='" + jenis + "'" +
+                "WHERE `hewan`.`id` = " + id + "";
         statement = connection.createStatement();
         statement.executeUpdate(query);
         

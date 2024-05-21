@@ -13,7 +13,6 @@ import javax.swing.table.DefaultTableModel;
  * @author Lab Informatika
  */
 public class hewanView extends JFrame{
-    JLabel labelId = new JLabel("ID");
     JLabel labelNama = new JLabel("Nama");
     JLabel labelKelas = new JLabel("Kelas");
     JLabel labelJenis = new JLabel("Jenis");
@@ -23,10 +22,10 @@ public class hewanView extends JFrame{
     public JTextField inputKelas = new JTextField();
     public JTextField inputJenis = new JTextField();
     
-    public JButton buttonAdd = new JButton("Add");
-    public JButton buttonUpdate = new JButton("Update");
-    public JButton buttonDelete = new JButton("Delete");
-    public JButton buttonClear = new JButton("Clear");
+    public JButton buttonAdd = new JButton("Tambah");
+    public JButton buttonUpdate = new JButton("Edit");
+    public JButton buttonDelete = new JButton("Hapus");
+    public JButton buttonBack = new JButton("Kembali");
     
     public JTable table;
     DefaultTableModel dtm;
@@ -46,14 +45,18 @@ public class hewanView extends JFrame{
     setSize(700,400);
     add(scrollPane);
     scrollPane.setBounds(20, 20, 480, 300);
-    add(labelId);
-    labelId.setBounds(510, 20, 90, 20);
+    add(labelNama);
+    labelNama.setBounds(510, 20, 90, 20);
     add(inputNama);
     inputNama.setBounds(510, 40, 90, 20);
     add(labelKelas);
     labelKelas.setBounds(510, 60, 90, 20);
+    add(inputKelas);
+    inputKelas.setBounds(510, 80, 90, 20);
+    add(labelJenis);
+    labelJenis.setBounds(510, 100, 90, 20);
     add(inputJenis);
-    inputJenis.setBounds(510, 80, 90, 20);
+    inputJenis.setBounds(510, 120, 90, 20);
     
     add(buttonAdd);
     buttonAdd.setBounds(510, 190, 90, 20);
@@ -61,13 +64,10 @@ public class hewanView extends JFrame{
     buttonUpdate.setBounds(510, 220, 90, 20);
     add(buttonDelete);
     buttonDelete.setBounds(510, 250, 90, 20);
-    add(buttonClear);
-    buttonClear.setBounds(510, 280, 90, 20);
+    add(buttonBack);
+    buttonBack.setBounds(510, 280, 90, 20);
     }
 
-    public String getId(){
-        return inputId.getText();
-    }
     public String getNama(){
         return inputNama.getText();
     }
@@ -76,11 +76,5 @@ public class hewanView extends JFrame{
     }
     public String getJenis(){
         return inputJenis.getText();
-    }
-    public void setAll(){
-     inputId.setText("");
-     inputNama.setText("");
-     inputKelas.setText("");
-     inputJenis.setText("");
     }
 }
